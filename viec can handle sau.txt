@@ -1,0 +1,6 @@
+1. refresh token xong phai reload lai trang
+2. token o file config khong tu cap nhat => bat buoc reload lai
+3. kiem tra verifycode o BE phai lam thu cong => khong dung @UseGuards duoc
+4. Sline responsive
+5. trang khong tu dong on top khi chuyen snag trang khac
+6.scroll khi hover tren spline khong duoc

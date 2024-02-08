@@ -1,0 +1,296 @@
+html {
+    max-width: 1920px;
+    margin: auto;
+    padding: 0 52px;
+    font-family: 'Montserrat', sans-serif;
+    color: #222222
+}
+
+
+body {
+  @apply bg-light_gray 
+}
+
+body.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.button {
+    @apply  px-[24px] text-[16px] rounded-[8px] h-[48px]
+}
+
+.link-text {
+  @apply w-fit relative font-semibold cursor-pointer leading-[150%]
+  after:content-[""] after:absolute after:w-full after:h-[2px] after:bg-[#acacac] after:left-0 after:bottom-0 
+  before:absolute before:content-[""] before:w-0 before:h-[2px] before:transition-all before:ease-in-out before:duration-300 before:bg-black hover:before:w-full before:bottom-0 before:z-10
+}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;    
+}
+
+.marquee  span {
+  will-change: transform;
+  transform: translateX(0);
+  white-space: nowrap;
+  font-size: 30px;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.footer-dot {
+  background-image: linear-gradient(to right, rgb(49, 34, 34) 0 10%, rgba(255, 255, 255, 0) 10%);
+  background-position: top;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}
+
+
+.sub-menu-dot {
+  position: relative;
+  background-image: linear-gradient(to bottom, #7a7a7a 0 10%, rgba(255, 255, 255, 0) 10%);
+  background-position: left top;
+  background-repeat: repeat-y;
+  background-size: 1px 8px;
+}
+
+
+
+
+#slider .swiper {
+  overflow: unset;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+#slider .swiper-button-prev, #slider .swiper-button-next {
+  top: unset;
+  left: unset;
+  bottom: 0;
+  right: 0;
+}
+
+#slider .swiper-button-prev {
+  bottom: 0;
+  right: 80px;
+}
+
+
+#slider .swiper-button-prev, #slider .swiper-button-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #222222;
+}
+
+#slider .swiper-button-prev:after, #slider .swiper-button-next:after {
+  font-size: 16px;
+  color: #222222;
+}
+
+.loading-text {
+  animation: 3s linear alternate animate-stroke;
+}
+
+@keyframes animate-stroke {
+    0% {
+      fill: transparent;
+      stroke: #222222;
+      stroke-width: 1;
+      stroke-dashoffset: 25%;
+      stroke-dasharray: 0 32%;
+    }
+
+    50% {
+      fill: transparent;
+      stroke: #222222;
+      stroke-width: 1;
+    }
+
+    80%,100%{
+      fill: #222222;
+      stroke: transparent;
+      stroke-width: 0;
+      stroke-dashoffset: -25%;
+      stroke-dasharray: 32% 0;
+      
+    }
+} 
+
+.transition-default {
+  transition: all .3s ease-in-out;
+}
+
+
+.transition-width {
+  transition: width .3s ease-in-out;
+  transition-delay: .3s;
+}
+
+.transition-height {
+  transition: height .3s ease-in-out;
+}
+
+
+.transition-scale {
+  animation: scale 0.4s linear  alternate;
+
+}
+.fillter-button {
+  @apply px-[20px] h-full inline-flex items-center justify-center rounded-[72px] border-[1px] border-[rgba(34,34,34,0.3)] text-[18px] font-semibold capitalize hover:border-black transition-default 
+}
+
+.big-heading {
+  @apply text-[135px] font-bold w-fit uppercase 
+}
+
+.small-heading {
+  @apply leading-[120%] text-[45px] font-semibold 
+}
+
+.sub-heading {
+  @apply text-black text-[22px] font-light leading-[150%]
+}
+
+.normal-text {
+  @apply font-light text-[16px] leading-[200%]
+}
+
+.light-text {
+  @apply font-thin text-[16px]
+}
+
+.shopping-gird {
+  --minthumb: 440px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--minthumb), 1fr));
+  grid-auto-flow: row dense;
+  grid-gap: 36px 20px;
+}
+
+.Toastify__toast {
+  font-family:  'Montserrat', sans-serif;
+  @apply bg-black text-white
+}
+
+button[aria-label="close"] {
+  color: white;
+}
+
+
+.selected-tab {
+  @apply relative font-semibold  before:w-full before:h-[2px] before:bg-black before:absolute before:bottom-0 before:left-0
+}
+
+.label-text {
+  @apply block text-sub_menu_index text-[12px] uppercase font-light mb-[8px]
+}
+
+.input-default {
+  @apply w-full px-[16px] h-[48px] font-light outline-none border-b-[1px] border-gray  focus:border-black transition-default
+}
+
+.sticky-blog {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+  height: 173px;
+}
+
+.show-on-begin {
+  animation: show-on-begin 0.7s linear  alternate;
+}
+
+@keyframes show-on-begin {
+  0% {
+    bottom: -100%
+  }
+
+  100% {
+    bottom: 0
+  }
+}
+
+@keyframes scale{
+  0% {
+    scale: 80%;
+    opacity:0
+  }
+
+  100% {
+    scale: 100%;
+    opacity: 100;
+  }
+}
+
+
+.notification-show-effect {
+  animation: notification-show-effect 1s linear  alternate;
+}
+
+@keyframes notification-show-effect {
+  0% {
+    bottom: -100%;
+    opacity:0;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+
+.notification-hide-effect {
+  animation: notification-hide-effect 1s linear  alternate;
+}
+
+@keyframes notification-hide-effect {
+  0% {
+    bottom: 0;
+    opacity:1;
+  }
+
+  100% {
+    bottom: -100%;
+    opacity: 0;
+  }
+}
+
+/*  */
+#loading-bar-spinner.spinner {
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  position: absolute;
+  z-index: 19 !important;
+  animation: loading-bar-spinner 900ms linear infinite;
+}
+
+#loading-bar-spinner.spinner .spinner-icon {
+  width: 40px;
+  height: 40px;
+  border:  solid 3px transparent;
+  border-top-color:  white !important;
+  border-left-color:   white  !important;
+  border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
